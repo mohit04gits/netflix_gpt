@@ -1,10 +1,16 @@
-import './App.css';
-import Body from './components/Body';
+import { Provider } from "react-redux";
+import "./App.css";
+import Body from "./components/Body";
+import appStore from "./utils/appstore";
 
 function App() {
   return (
-    <Body />
+    <Provider store={appStore}>
+      <Body />
+    </Provider>
   );
 }
 
 export default App;
+
+//https://netflixgpt-7c2e8.web.app

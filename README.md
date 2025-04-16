@@ -6,7 +6,7 @@
 
 
 
-
+# read about ragex email and passwor validation chatgpt
 .......
 # features
 -login/signup
