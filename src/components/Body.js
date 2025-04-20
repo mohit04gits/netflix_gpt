@@ -30,34 +30,36 @@
 
 // export default Body;
 
-// Body.js
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Login";
 import Layout from "./Layout";
 import Browse from "./Browse";
 import MovieDetails from "./MovieDetails";
-
+import MovieTrailer from "./MovieTrailer";
 
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <Login />, // Login at root
+    element: <Login />,
   },
   {
     path: "/browse",
-    element: <Layout />, // Header always here
+    element: <Layout />,
     children: [
       {
-        index: true, // /browse
-        element: <Browse />, // Browse contains MainContainer and SecondaryContainer
+        index: true,
+        element: <Browse />,
       },
       {
-        path: "moviedetails/:id", // /browse/moviedetails/123
+        path: "moviedetails/:id", // ✅ /browse/moviedetails/:id
         element: <MovieDetails />,
+      },
+      {
+        path: "movietrailer/:id", // ✅ /browse/movietrailer/:id
+        element: <MovieTrailer />,
       },
     ],
   },
-  
 ]);
 
 const Body = () => {

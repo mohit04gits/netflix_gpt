@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { IMG_CDN_URL } from "../utils/constants";
 
@@ -49,7 +49,7 @@ const MovieDetails = () => {
         {/* Extra info (optional) */}
         <div className="mt-6">
           {/* <Link to={`trailer/${id}`}> */}
-          <Link to={`movietrailer/${id}`}>
+          <Link to={`/browse/movietrailer/${movie.id}`}>
             <button className="px-6 py-3 bg-red-600 hover:bg-red-700 transition rounded-full text-lg font-semibold">
               Watch Trailer
             </button>
@@ -58,6 +58,7 @@ const MovieDetails = () => {
           {/* </Link> */}
         </div>
       </div>
+      <Outlet />
     </div>
   );
 };
